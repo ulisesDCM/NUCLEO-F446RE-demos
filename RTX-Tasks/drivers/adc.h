@@ -7,7 +7,7 @@
 #define ADC_H
 #include "stm32f4xx_adc.h"
 
-#define ADC1_BASE             (APB2PERIPH_BASE + 0x2000)
+//#define ADC1_BASE             (APB2PERIPH_BASE + 0x2000)
 #define STM_PIN_DATA_EXT(MODE, PUPD, AFNUM, CHANNEL, INVERTED)  ((int)(((INVERTED & 0x01) << 15) | ((CHANNEL & 0x0F) << 11) | ((AFNUM & 0x0F) << 7) | ((PUPD & 0x07) << 4) | ((MODE & 0x0F) << 0)))
 #define STM_MODE_ANALOG             (5)
 #define STM_PIN_CHANNEL(X)  (((X) >> 11) & 0x0F)
@@ -20,7 +20,7 @@
 #define  GPIO_PULLUP        ((uint32_t)0x00000001)   /*!< Pull-up activation                  */
 #define  GPIO_PULLDOWN      ((uint32_t)0x00000002)   /*!< Pull-down activation                */
 #define UNUSED(x) ((void)(x))
-#define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000)
+//#define GPIOA_BASE            (AHB1PERIPH_BASE + 0x0000)
 #define  GPIO_SPEED_LOW         ((uint32_t)0x00000000)  /*!< Low speed     */
 #define  GPIO_SPEED_MEDIUM      ((uint32_t)0x00000001)  /*!< Medium speed  */
 #define  GPIO_SPEED_FAST        ((uint32_t)0x00000002)  /*!< Fast speed    */

@@ -1,11 +1,11 @@
 #include <RTL.h>
-#include <gpio.h>
 
 /*Modified the function to a task*/
 void Turn_GreenLed_On(void){
 
-		for(;;){
-			gpio_set(P_LED_G,LED_ON);
+		for(;;)
+		{
+		
 		}
 
 }
@@ -13,8 +13,9 @@ void Turn_GreenLed_On(void){
 /*Modified the function to a task*/
 void Turn_GreenLed_Off(void){
 
-		for(;;){
-			gpio_set(P_LED_G,LED_OFF);
+		for(;;)
+		{
+
 		}
 
 }
@@ -30,9 +31,6 @@ __task void init (void) {
 
 int main(void)
 {
-		gpio_set_mode(P_LED_G,Output);
-		gpio_set_mode(P_LED_R,Output);
-		gpio_set(P_LED_R,LED_ON);
 		os_sys_init(init);	
 }
 

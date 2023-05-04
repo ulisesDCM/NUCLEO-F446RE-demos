@@ -1,6 +1,7 @@
 #include <platform.h>
 #include <stdlib.h>
 #include <adc.h>
+//#include "stm32f4xx_adc.h"
 
 ADC_HandleTypeDef AdcHandle;
 
