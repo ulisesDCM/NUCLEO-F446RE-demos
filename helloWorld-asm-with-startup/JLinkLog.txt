@@ -4848,3 +4848,14 @@ T0CB0 089:835.054   CPU_ReadMem(4 bytes @ 0xE0001004)
 T0CB0 089:835.649   Data:  15 00 00 00
 T0CB0 089:835.705   Debug reg: DWT_CYCCNT
 T0CB0 089:835.730 - 0.799ms returns 1 (0x1)
+T0CB0 261:262.177 JLINK_HasError()
+T0CB0 261:268.165 JLINK_Close()
+T0CB0 261:268.994   OnDisconnectTarget() start
+T0CB0 261:269.050    J-Link Script File: Executing OnDisconnectTarget()
+T0CB0 261:269.084   CPU_WriteMem(4 bytes @ 0xE0042004)
+T0CB0 261:269.669   CPU_WriteMem(4 bytes @ 0xE0042008)
+T0CB0 261:270.178   OnDisconnectTarget() end
+T0CB0 261:270.246   CPU_ReadMem(4 bytes @ 0xE0001000)
+T0CB0 261:309.813 - 41.712ms
+T0CB0 261:309.890   
+T0CB0 261:309.907   Closed
