@@ -1,0 +1,36 @@
+RAM1_ADDR	EQU	0x20000000	;Datasheet SRAM (112 KB aliased By bit-banding)		0x20000000 - 0x2001BFFF
+RAM2_ADDR	EQU	0x2001C000	;Datasheet SRAM (16 KB aliased By bit-banding) 		0x2001C000 - 0x2001FFFF
+	
+	AREA mycode, CODE, READONLY
+	ENTRY
+	EXPORT __main
+
+__main
+		BL	FILL_SRAM1
+		BL	COPY_SRAM2
+Stop 		B	Stop
+
+
+FILL_SRAM1
+		LDR		R1,=RAM1_ADDR
+		MOV		R0,#10
+		LDR		R2,=0XDEADBEEF
+L1				STR 	R2,[R1]
+				ADD		R1,R1,#4
+				SUBS 	R0,R0,#1
+				BNE		L1
+		BLX		LR
+
+COPY_SRAM2
+		LDR		R1,=RAM1_ADDR
+		LDR		R2,=RAM2_ADDR
+		MOV		R0,#10
+L2				LDR 	R3,[R1]
+				STR		R3,[R2]
+				ADD		R1,R1,#4
+				ADD		R2,R2,#4
+				SUBS	R0,R0,#1
+				BNE		L2
+		BLX		LR
+		
+END
